@@ -280,6 +280,8 @@ public class ChlamydomonosiaBasics
   加载mod
 
   forge使用三个事件加载mod，分别为`FMLPreInitializationEvent`，`FMLInitializationEvent`，`FMLPostInitializationEvent`。不同的内容将在不同的事件中加载。`@Mod.EventHandler`注解负责使forge识别这些事件。
+  
+  可以看到，主类在加载mod时只负责输出日志信息，其他工作都交给了代理。
 
 #### 2. 代理
 
@@ -318,7 +320,7 @@ public class CommonProxy
 }
 ```
 
-可以看见，它同样包含在主类中出现的`preInit`，`init`，`postInit`三个函数，用于在服务端注册内容，如`BlockLoader`
+可以看见，它同样包含在主类中出现的`preInit`，`init`，`postInit`三个函数，用于在服务端注册内容，如`BlockLoader`(注意，当你实际打开该文件，加载的内容可能会多于教程中叙述的内容)
 
 `ClientProxy`代码如下：
 
