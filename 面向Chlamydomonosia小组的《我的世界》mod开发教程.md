@@ -52,8 +52,8 @@ idea似乎有了官方中文版，可以百度切换语言的方法。
 
 接下来，我们要安装绪论中所述的forge API：
 
-* 访问[forge官网](https://files.minecraftforge.net/)![image-20200609181329480](E:\Chlamydomonos\mod_tutorial\面向Chlamydomonosia小组的《我的世界》mod开发教程.assets\image-20200609181329480.png)
-* 点击侧栏中的1.12.2![image-20200609181610560](E:\Chlamydomonos\mod_tutorial\面向Chlamydomonosia小组的《我的世界》mod开发教程.assets\image-20200609181610560.png)
-* 等待所有图标加载完成![image-20200609181547696](E:\Chlamydomonos\mod_tutorial\面向Chlamydomonosia小组的《我的世界》mod开发教程.assets\image-20200609181547696.png)
-* 翻到下面的列表，点击14.23.5.2847行中的Mdk旁边的圆形按钮![image-20200609181734934](E:\Chlamydomonos\mod_tutorial\面向Chlamydomonosia小组的《我的世界》mod开发教程.assets\image-20200609181734934.png)
+* 访问[forge官网](https://files.minecraftforge.net/)![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
+* 点击侧栏中的1.12.2![image-20200609181610560](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181610560.png)
+* 等待所有图标加载完成![image-20200609181547696](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181547696.png)
+* 翻到下面的列表，点击14.23.5.2847行中的Mdk旁边的圆形按钮![image-20200609181734934](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181734934.png)
 
