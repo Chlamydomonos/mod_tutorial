@@ -143,7 +143,7 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 ![image-20200620191554459](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200620191554459.png)
 
 * `build`：编程完成后生成的mod文件存放处（idea显示黄色表示其被Git忽略）
-* `run`：相当于一个MC游戏目录，可向其添加存档等
+* `run`：相当于一个MC游戏目录，可向其添加存档等。游戏崩溃时产生的崩溃报告也将保存在此文件夹。
 * `src\main`：mod主要文件的存放处，其中`java`文件夹存放代码，`resources`文件夹存放资源文件，如贴图，模型，语言文件
 
 ### (二) 主[类](https://www.runoob.com/java/java-object-classes.html)，代理和mod信息
