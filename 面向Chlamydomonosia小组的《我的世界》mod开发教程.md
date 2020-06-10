@@ -46,9 +46,9 @@ Minecraft使用Java语言编写，因此，开发mod需要的最基础的工具�
 * Java Development Kit 8 (jdk8)
 * 一个Java IDE (对于Chlamydomonosia小组成员，应统一使用Intellij idea)
 
-安装jdk后，你应百度Java环境变量配置教程，并配置好环境变量。
+安装jdk后，你应[配置好环境变量](https://www.cnblogs.com/cnwutianhao/p/5487758.html)。
 
-idea似乎有了官方中文版，可以百度切换语言的方法。
+idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.html)。
 
 接下来，我们要安装绪论中所述的forge API：
 
@@ -92,5 +92,6 @@ idea似乎有了官方中文版，可以百度切换语言的方法。
 
 ## 第二节：mod的基本结构
 
-### (一) 主类
+### (一) mod工程结构
 
+本部分将仅介绍mod工程中部分文件夹及文件的功能。
