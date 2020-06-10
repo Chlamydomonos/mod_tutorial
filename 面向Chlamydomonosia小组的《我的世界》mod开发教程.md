@@ -53,26 +53,39 @@ idea似乎有了官方中文版，可以百度切换语言的方法。
 接下来，我们要安装绪论中所述的forge API：
 
 * 访问[forge官网](https://files.minecraftforge.net/)![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
+
 * 点击侧栏中的1.12.2![image-20200609181610560](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181610560.png)
+
 * 等待所有图标加载完成![image-20200609181547696](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181547696.png)
+
 * 翻到下面的列表，点击14.23.5.2847行中的Mdk旁边的圆形按钮——**不要直接点击Mdk文字！**![image-20200609181734934](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181734934.png)
 
 * 下载Mdk的zip文件后，解压到一个单独的纯英文路径
+
 * 打开该文件夹，按住Shift键，右键点击空白区域，选择“在此处打开命令窗口”选项
+
 * 输入以下命令:
 
-```
-gradlew setupDecompWorkspace
-```
+  ```
+  gradlew setupDecompWorkspace
+  ```
 
 * 这会下载大量文件到你的电脑，建议翻墙。[utsc_zzzz](https://fmltutor.ustc-zzzz.net/1.1-%E9%85%8D%E7%BD%AE%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83.html)提供了一个只能用来安装forge的翻墙工具。
+
 * 构建成功后，输入以下命令
 
-```
-gradlew genIntellijRuns
-```
+  ```
+  gradlew genIntellijRuns
+  ```
 
-```
-gradlew idea
-```
+  ```
+  gradlew idea
+  ```
 
+  同样，每条命令输入之后，等待构建完成。
+
+  如果构建失败，重新输入再试一次。
+
+* 用idea把这个文件夹作为项目打开，开发环境安装完毕。
+
+注意，以上所述命令中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)GRADLE_USER_HOME，值为你想更改的路径
