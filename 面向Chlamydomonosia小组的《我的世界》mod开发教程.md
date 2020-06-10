@@ -88,4 +88,9 @@ idea似乎有了官方中文版，可以百度切换语言的方法。
 
 * 用idea把这个文件夹作为项目打开，开发环境安装完毕。
 
-注意，以上所述命令中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)GRADLE_USER_HOME，值为你想更改的路径
+注意，以上所述命令中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)GRADLE_USER_HOME，值为你想更改的路径。
+
+## 第二节：mod的基本结构
+
+### (一) 主类
+
