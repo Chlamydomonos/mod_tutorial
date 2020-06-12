@@ -65,6 +65,10 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 * 原先，forge采用控制台命令的形式初始化开发环境。但现在，forge对开发环境的搭建做了简化。只需用idea把解压出的文件夹中的build.gradle**作为工程打开**，idea会自动下载所需的文件。由于这些文件位于外网，下载将会极其缓慢。可先让导入过程后台运行（点击右下角按钮），再点击IDE左下角“Build”按钮查看进度。安装完成后将会显示以下内容：
 
   ![image-20200612200705099](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612200705099.png)
+  
+* 点击IDE右侧“Gradle”，运行Tasks\fg_runs\genIntellijRuns![image-20200612201138062](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612201138062.png)
+
+* 
 
 注意，开发环境搭建过程中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)GRADLE_USER_HOME，值为你想更改的路径。
 
