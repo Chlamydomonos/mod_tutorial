@@ -52,13 +52,21 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
 接下来，我们要安装绪论中所述的forge API：
 
-* 访问[forge官网](https://files.minecraftforge.net/)![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
+* 访问
 
-* 点击侧栏中的1.12.2![image-20200609181610560](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181610560.png)
+  ![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
 
-* 等待所有图标加载完成![image-20200609181547696](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181547696.png)
+* 点击侧栏中的1.12.2
 
-* 翻到下面的列表，点击14.23.5.2854行中的Mdk旁边的圆形按钮——**不要直接点击Mdk文字！**![image-20200609181734934](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181734934.png)
+  ![image-20200609181610560](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181610560.png)
+
+* 等待所有图标加载完成
+
+  ![image-20200609181547696](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181547696.png)
+
+* 翻到下面的列表，点击14.23.5.2854行中的Mdk旁边的圆形按钮——**不要直接点击Mdk文字，否则会进入adfoc.us，而该网站已被墙**
+
+  ![image-20200609181734934](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181734934.png)
 
 * 下载Mdk的zip文件后，解压到一个单独的纯英文路径
 
@@ -66,7 +74,21 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
   ![image-20200612200705099](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612200705099.png)
   
-* 点击IDE右侧“Gradle”，运行Tasks\fg_runs\genIntellijRuns![image-20200612201138062](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612201138062.png)
+* 点击IDE右侧“Gradle”，运行Tasks\fg_runs\genIntellijRuns
+
+  ![image-20200612201138062](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612201138062.png)
+
+  这同样需要下载大量文件，主要为MC的材质包文件，极其缓慢。
+
+* 点击IDE右上角运行按钮左侧的下拉菜单，选择“runClient”
+
+  ![image-20200613195635138](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200613195635138.png)
+
+* 点击运行按钮，MC将会启动
+
+  ![image-20200613200014869](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200613200014869.png)
+
+  这时，你应该需要更改MC的语言为简体中文。
 
 * 
 
