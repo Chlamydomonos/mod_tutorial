@@ -1,5 +1,9 @@
 # 面向Chlamydomonosia小组的《我的世界》mod开发教程
 
+## 目录
+
+[toc]
+
 ## 绪论：什么是《我的世界》mod
 
 众所周知，Minecraft是一个官方支持盗版的游戏。那么，究竟是什么维持了MC的经久不衰呢？我个人认为，丰富的mod系统正是维持MC活力的第一要素。既然你已经来到了这个教程，你大概已经知道一个mod的样子了。接下来，我们先介绍mod的发展史。  
@@ -70,17 +74,17 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
 * 下载Mdk的zip文件后，解压到一个单独的纯英文路径
 
-* 原先，forge采用控制台命令的形式初始化开发环境。但现在，forge对开发环境的搭建做了简化。只需用idea把解压出的文件夹中的build.gradle**作为工程打开**，idea会自动下载所需的文件。由于这些文件位于外网，下载将会极其缓慢。可先让导入过程后台运行（点击右下角按钮），再点击IDE左下角“Build”按钮查看进度。安装完成后将会显示以下内容：
+* 原先，forge采用控制台命令的形式初始化开发环境。但现在，forge对开发环境的搭建做了简化。只需用idea把解压出的文件夹中的`build.gradle`**作为工程打开**，idea会自动下载所需的文件。由于这些文件位于外网，下载将会极其缓慢。可先让导入过程后台运行（点击右下角按钮），再点击IDE左下角`Build`按钮查看进度。安装完成后将会显示以下内容：
 
   ![image-20200612200705099](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612200705099.png)
   
-* 点击IDE右侧“Gradle”，运行Tasks\fg_runs\genIntellijRuns
+* 点击IDE右侧`Gradle`，运行`Tasks\fg_runs\genIntellijRuns`
 
   ![image-20200612201138062](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200612201138062.png)
 
   这同样需要下载大量文件，主要为MC的材质包文件，极其缓慢。
 
-* 点击IDE右上角运行按钮左侧的下拉菜单，选择“runClient”
+* 点击IDE右上角运行按钮左侧的下拉菜单，选择`runClient`
 
   ![image-20200613195635138](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200613195635138.png)
 
@@ -90,9 +94,37 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
   这时，你应该需要更改MC的语言为简体中文。
 
-* 
+* 安装[Git](https://gitforwindows.org/)
 
-注意，开发环境搭建过程中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)GRADLE_USER_HOME，值为你想更改的路径。
+* 选择IDE上方`文件-设置`，在设置窗口中选择`版本控制-Git`，IDE会自动识别安装的Git
+
+  ![image-20200614204043380](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204043380.png)
+
+* 选择`Github`，登录你的Github账号(这时你应该联系我，让我把你加入合作者)
+
+  ![image-20200614204250460](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204250460.png)
+
+* 选择IDE上方`VCS-导入到版本控制-创建Git存储库`
+
+  ![image-20200614204430873](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204430873.png)
+
+* 点击确定按钮即可
+
+  ![image-20200614204514306](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204514306.png)
+
+* 选择`VCS-Git-远程`
+
+  ![image-20200614204602242](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204602242.png)
+
+* 添加远程仓库，名称为origin，URL为https://github.com/Chlamydomonos/Chlamydomonosia-basics.git
+
+  ![image-20200614204832161](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204832161.png)
+
+* 点击右上角蓝色箭头更新工程(之后你每次启动都应该这么做)，开发环境搭建完毕
+
+  ![image-20200614204944856](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200614204944856.png)
+
+注意，开发环境搭建过程中自动下载的文件默认保存在C盘的用户文件夹中，如果想更改路径，可以增加[环境变量](https://baijiahao.baidu.com/s?id=1652502091402613426&wfr=spider&for=pc)`GRADLE_USER_HOME`，值为你想更改的路径。
 
 ## 第二节：mod的基本结构
 
