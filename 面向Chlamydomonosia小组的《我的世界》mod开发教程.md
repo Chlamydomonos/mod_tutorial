@@ -58,7 +58,7 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
 * 访问[Forge官网](https://files.minecraftforge.net/)
 
-  ![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
+![image-20200609181329480](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200609181329480.png)
 
 * 点击侧栏中的1.12.2
 
