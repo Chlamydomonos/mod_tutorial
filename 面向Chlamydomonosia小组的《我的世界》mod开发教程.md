@@ -134,3 +134,79 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 ### (一) mod工程结构
 
 本部分将仅介绍mod工程中部分文件夹及文件的功能。
+
+如图，mod工程分为以下部分：
+
+![image-20200620191554459](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200620191554459.png)
+
+* `build`：编程完成后生成的mod文件存放处（idea显示黄色表示其被Git忽略）
+* `run`：相当于一个MC游戏目录，可向其添加存档等
+* `src\main`：mod主要文件的存放处，其中`java`文件夹存放代码，`resources`文件夹存放资源文件，如贴图，模型，语言文件
+
+### (二) 主类，代理和mod信息
+
+注意：Chlamydomonosia项目在不断更新，具体的文件数量可能会与该教程有出入，但理论上文件不会被移动
+
+打开mod文件所在[包](https://www.runoob.com/java/java-package.html)`java\chlamtdomonos.chlamydomonosia.chlamydomonosiabasics`（之后若不加叙述，Java代码都在此包中），其下有包`core`，包含mod的主类与代理。
+
+文件ChlamydomonosiaBasics是mod的主类。打开它可看到以下代码：
+
+```java
+package chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
+
+@Mod(modid = ChlamydomonosiaBasics.MODID, name = ChlamydomonosiaBasics.NAME, version = ChlamydomonosiaBasics.VERSION)
+public class ChlamydomonosiaBasics
+{
+    public static final String MODID = "chlamydomonosiabasics";
+    public static final String NAME = "Chlamydomonosia-Basics";
+    public static final String VERSION = "0.0.1";
+
+    @Mod.Instance(ChlamydomonosiaBasics.MODID)
+    public static ChlamydomonosiaBasics instance;
+
+    @SidedProxy(clientSide = "chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.ClientProxy",
+    serverSide = "chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.CommonProxy")
+    public static CommonProxy proxy;
+
+    public static Logger logger;
+
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        logger = event.getModLog();
+        logger.info("preinitialize Chlamydomonosia-Basics");
+        proxy.preInit(event);
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        logger.info("initialize Chlamydomonosia-Basics");
+        proxy.init(event);
+    }
+
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        logger.info("postinitialize Chlamydomonosia-Basics");
+        proxy.postInit(event);
+    }
+}
+```
+
+最上方大量[import语句](https://www.runoob.com/java/java-object-classes.html)是为导入所需的外部类，不做解释
+
+主类前有如下语句：
+
+```java
+@Mod(modid = ChlamydomonosiaBasics.MODID, name = ChlamydomonosiaBasics.NAME, version = ChlamydomonosiaBasics.VERSION)
+```
+
+这是一个[注解](https://www.runoob.com/w3cnote/java-annotation.html)，由于使Forge识别该mod。
