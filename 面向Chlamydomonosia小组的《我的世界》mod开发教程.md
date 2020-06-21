@@ -7,6 +7,7 @@
 * [第一节：安装开发环境](#第一节：安装开发环境)
 * [第二节：mod的基本结构](#第二节：mod的基本结构)
   * [(一) mod工程结构](#(一)-mod工程结构)
+  * [(二) 主类，代理和mod信息](#(二)-主类，代理和mod信息)
 ## 绪论：什么是《我的世界》mod
 
 众所周知，Minecraft是一个官方支持盗版的游戏。那么，究竟是什么维持了MC的经久不衰呢？我个人认为，丰富的mod系统正是维持MC活力的第一要素。既然你已经来到了这个教程，你大概已经知道一个mod的样子了。接下来，我们先介绍mod的发展史。  
@@ -143,7 +144,9 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 * `run`：相当于一个MC游戏目录，可向其添加存档等
 * `src\main`：mod主要文件的存放处，其中`java`文件夹存放代码，`resources`文件夹存放资源文件，如贴图，模型，语言文件
 
-### (二) 主类，代理和mod信息
+### (二) 主[类](https://www.runoob.com/java/java-object-classes.html)，代理和mod信息
+
+#### 1. 主类
 
 注意：Chlamydomonosia项目在不断更新，具体的文件数量可能会与该教程有出入，但理论上文件不会被移动
 
@@ -210,3 +213,140 @@ public class ChlamydomonosiaBasics
 ```
 
 这是一个[注解](https://www.runoob.com/w3cnote/java-annotation.html)，由于使Forge识别该mod。
+
+主类包含如下内容：
+
+* 对modid，名称，版本的定义
+
+  ```java
+  public static final String MODID = "chlamydomonosiabasics";
+      public static final String NAME = "Chlamydomonosia-Basics";
+      public static final String VERSION = "0.0.1";
+  ```
+
+  modid是一个用于forge识别mod的名称，只由小写字母组成。
+
+* 创建mod的实例
+
+  ```java
+  @Mod.Instance(ChlamydomonosiaBasics.MODID)
+      public static ChlamydomonosiaBasics instance;
+  ```
+
+  同样使用注解使forge自动识别实例
+
+* 启动代理
+
+  ```java
+  @SidedProxy(clientSide = "chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.ClientProxy",
+      serverSide = "chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.CommonProxy")
+      public static CommonProxy proxy;
+  ```
+
+  创建代理的实例
+
+  ```java
+  public static Logger logger;
+  ```
+
+  创建一个logger以输出加载信息
+
+  ```java
+  @Mod.EventHandler
+      public void preInit(FMLPreInitializationEvent event)
+      {
+          logger = event.getModLog();
+          logger.info("preinitialize Chlamydomonosia-Basics");
+          proxy.preInit(event);
+      }
+  
+      @Mod.EventHandler
+      public void init(FMLInitializationEvent event)
+      {
+          logger.info("initialize Chlamydomonosia-Basics");
+          proxy.init(event);
+      }
+  
+      @Mod.EventHandler
+      public void postInit(FMLPostInitializationEvent event)
+      {
+          logger.info("postinitialize Chlamydomonosia-Basics");
+          proxy.postInit(event);
+      }
+  ```
+
+  加载mod
+
+  forge使用三个事件加载mod，分别为`FMLPreInitializationEvent`，`FMLInitializationEvent`，`FMLPostInitializationEvent`。不同的内容将在不同的时间中加载。`@Mod.EventHandler`注解负责使forge识别这些事件。
+
+#### 2. 代理
+
+由于MC运行时会分别在服务端和客户端运行（单人游戏时MC也会启动一个内置服务端），mod也需要在服务端和客户端分别加载。因此，需要为服务端与客户端分别创建代理。
+
+在包`core`下有`CommonProxy`和`ClientProxy`两个文件，分别是针对服务端和客户端的代理。
+
+`CommonProxy`代码如下：
+
+```java
+package chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core;
+
+import chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.loaders.BlockLoader;
+import chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core.loaders.ItemLoader;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+public class CommonProxy
+{
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        new BlockLoader(event);
+        new ItemLoader(event);
+    }
+
+    public void init(FMLInitializationEvent event)
+    {
+
+    }
+
+    public void postInit(FMLPostInitializationEvent event)
+    {
+
+    }
+}
+```
+
+可以看见，它同样包含在主类中出现的`preInit`，`init`，`postInit`三个函数，用于在服务端注册内容，如`BlockLoader`
+
+`ClientProxy`代码如下：
+
+```java
+package chlamydomonos.chlamydomonosia.chlamydomonosiabasics.core;
+
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+public class ClientProxy extends CommonProxy
+{
+    @Override
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        super.preInit(event);
+    }
+
+    @Override
+    public void init(FMLInitializationEvent event)
+    {
+        super.init(event);
+    }
+
+    @Override
+    public void postInit(FMLPostInitializationEvent event)
+    {
+        super.postInit(event);
+    }
+}
+```
+
+它继承了`CommonProxy`，用于注册只在客户端生效的东西
