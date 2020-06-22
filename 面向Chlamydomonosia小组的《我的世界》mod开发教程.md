@@ -8,6 +8,8 @@
 * [第二节：mod的基本结构](#第二节：mod的基本结构)
   * [(一) mod工程结构](#(一)-mod工程结构)
   * [(二) 主类，代理和mod信息](#(二)-主类，代理和mod信息)
+    * [1. 主类](#1.-主类)
+    * [2. 代理](#2.-代理)
 ## 绪论：什么是《我的世界》mod
 
 众所周知，Minecraft是一个官方支持盗版的游戏。那么，究竟是什么维持了MC的经久不衰呢？我个人认为，丰富的mod系统正是维持MC活力的第一要素。既然你已经来到了这个教程，你大概已经知道一个mod的样子了。接下来，我们先介绍mod的发展史。  
@@ -277,7 +279,7 @@ public class ChlamydomonosiaBasics
 
   加载mod
 
-  forge使用三个事件加载mod，分别为`FMLPreInitializationEvent`，`FMLInitializationEvent`，`FMLPostInitializationEvent`。不同的内容将在不同的时间中加载。`@Mod.EventHandler`注解负责使forge识别这些事件。
+  forge使用三个事件加载mod，分别为`FMLPreInitializationEvent`，`FMLInitializationEvent`，`FMLPostInitializationEvent`。不同的内容将在不同的事件中加载。`@Mod.EventHandler`注解负责使forge识别这些事件。
 
 #### 2. 代理
 
