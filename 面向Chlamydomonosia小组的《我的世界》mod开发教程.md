@@ -100,7 +100,7 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
   这时，你应该需要更改MC的语言为简体中文。
 
-* 安装[Git](https://gitforwindows.org/)(如果你不是Chlamydomonosia小组成员，忽略以下步骤)
+* 安装[Git](https://gitforwindows.org/)(如果你不是Chlamydomonosia小组成员，忽略以下步骤)(如果你已经把该教程clone到了本地，你应该已经安装了Git)
 
 * 选择IDE上方`文件-设置`，在设置窗口中选择`版本控制-Git`，IDE会自动识别安装的Git
 
