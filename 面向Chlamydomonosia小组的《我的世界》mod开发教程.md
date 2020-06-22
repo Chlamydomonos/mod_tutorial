@@ -148,7 +148,7 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
 #### 1. 主类
 
-注意：Chlamydomonosia项目在不断更新，具体的文件数量可能会与该教程有出入，但理论上文件不会被移动
+注意：Chlamydomonosia项目在不断更新，具体的文件数量与内容可能会与该教程有出入，但理论上文件不会被移动
 
 打开mod文件所在[包](https://www.runoob.com/java/java-package.html)`java\chlamtdomonos.chlamydomonosia.chlamydomonosiabasics`（之后若不加叙述，Java代码都在此包中），其下有包`core`，包含mod的主类与代理。
 
