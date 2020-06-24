@@ -1,7 +1,5 @@
-# mod_tutorial
-A mod tutorial for the Chlamydomonosia team  
-
-建议clone到本地并用Typora阅读
+# 面向Chlamydomonosia小组的《我的世界》mod开发教程
+建议clone到本地并用[Typora](https://www.typora.io/)阅读
 
 clone方法：
 
