@@ -136,6 +136,16 @@ idea似乎有了[官方中文版](https://www.cnblogs.com/vipstone/p/12683829.ht
 
 ## 第二节：mod的基本结构
 
+在阅读之后的教程前，请先点击IDE右下角带有![image-20200625124329434](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200625124329434.png)标志的按钮，进行如下操作：
+
+* 点击`远程分支-tutorial-检出`
+
+  ![image-20200625125138230](面向Chlamydomonosia小组的《我的世界》mod开发教程.assets/image-20200625125138230.png)
+
+* 点击`签出标记并修订`，并在弹出的窗口中输入`t2`
+
+  之后每节教程前你都需要签出标签，此时你需要进行以上第二步，不需要进行第一步
+
 ### (一) mod工程结构
 
 本部分将仅介绍mod工程中部分文件夹及文件的功能。
@@ -306,8 +316,7 @@ public class CommonProxy
 {
     public void preInit(FMLPreInitializationEvent event)
     {
-        new BlockLoader(event);
-        new ItemLoader(event);
+        
     }
 
     public void init(FMLInitializationEvent event)
@@ -322,7 +331,7 @@ public class CommonProxy
 }
 ```
 
-可以看见，它同样包含在主类中出现的`preInit`，`init`，`postInit`三个函数，用于在服务端注册内容，如`BlockLoader`(注意，当你实际打开该文件，加载的内容可能会多于教程中叙述的内容)
+可以看见，它同样包含在主类中出现的`preInit`，`init`，`postInit`三个函数，用于在服务端注册内容
 
 `ClientProxy`代码如下：
 
@@ -356,3 +365,12 @@ public class ClientProxy extends CommonProxy
 ```
 
 它继承了`CommonProxy`，用于注册只在客户端生效的东西
+
+#### 3.mod信息
+
+此处非常令人迷惑，`mcmod.info`文件无法被识别，所以本部分教程先跳过
+
+## 第三节：物品
+
+### (一) 第一个物品
+
